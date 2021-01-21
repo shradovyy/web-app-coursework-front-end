@@ -81,11 +81,6 @@ let app = new Vue({
         addOrder(body) {
             var raw = JSON.stringify(body);
 
-            fetch("https://coursework2.herokuapp.com/api/orders", requestOptions)
-            .then(response => response.text())
-            .then(result => console.log(result))
-            .catch(error => console.log('error', error));
-
             fetch(`https://coursework2.herokuapp.com/api/orders`, {
                 method: 'POST',
                 headers: {
