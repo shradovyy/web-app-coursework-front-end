@@ -80,14 +80,22 @@ let app = new Vue({
         },
         addOrder(body) {
 
-            fetch('https://coursework2.herokuapp.com/api/orders', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(body)
-            }).then(response => response.json())
-            .then(data => { return data }).catch(err => { return data});
+            var myHeaders = new Headers();
+            myHeaders.append("Content-Type", "application/json");
+
+            var raw = JSON.stringify(body);
+
+            var requestOptions = {
+            method: 'POST',
+            headers: myHeaders,
+            body: raw,
+            redirect: 'follow'
+            };
+
+            fetch("https://coursework2.herokuapp.com/api/orders", requestOptions)
+            .then(response => response.text())
+            .then(result => console.log(result))
+            .catch(error => console.log('error', error));
 
         },
         updateLessonAvailability(id, quantity) {
@@ -98,7 +106,7 @@ let app = new Vue({
                     'Content-Type': 'application/json'
                 }
             }).then(response => response.json())
-            .then(data => { return data }).catch(err => { return data});
+            .then(data => { return data }).catch(err => console.log(err));
 
         },
         checkout() {
