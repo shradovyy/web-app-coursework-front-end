@@ -80,7 +80,7 @@ let app = new Vue({
         },
         addOrder(body) {
 
-            fetch('/api/orders', {
+            fetch('https://coursework2.herokuapp.com/api/orders', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -92,7 +92,7 @@ let app = new Vue({
         },
         updateLessonAvailability(id, quantity) {
 
-            fetch(`/api/lessons/${id}/reduce/availability/${quantity}`, {
+            fetch(`https://coursework2.herokuapp.com/api/lessons/${id}/reduce/availability/${quantity}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json'
@@ -131,7 +131,7 @@ let app = new Vue({
 
         },
         getLessons() {
-            fetch('/api/lessons')
+            fetch('https://coursework2.herokuapp.com/api/lessons')
                 .then(response => response.json())
                 .then(data => this.lessons = data)
                 .catch(err => console.log(err));
