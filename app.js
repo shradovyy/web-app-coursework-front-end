@@ -120,7 +120,7 @@ let app = new Vue({
                     "quantity": item.quantity
                 };
                 this.addOrder(body);
-                this.updateLessonAvailability(item.lesson._id, item.quantity);
+                //this.updateLessonAvailability(item.lesson._id, item.quantity);
 
             });
 
