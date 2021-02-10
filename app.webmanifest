@@ -1,0 +1,14 @@
+{
+    "name": "After school classes & activities",
+    "short_name": "classes",
+    "description": "After school classes & activities",
+    "icons": [
+        {
+            "src": "icons/calculator.png",
+            "sizes": "512x512",
+            "type": "image/png"
+} ],
+    "start_url": "index.html",
+    "display": "fullscreen",
+    "background_color": "#f6f6f6"
+}
